@@ -1,24 +1,22 @@
 class Solution {
     public int maximumPopulation(int[][] logs) {
-        int[] years = new int[2051]; // Assuming logs range from 1950 to 2050
-        
-        // Iterate through logs and mark population for each year
-        for (int[] log : logs) {
-            for (int i = log[0]; i < log[1]; i++) {
-                years[i - 1950]++; // Adjusting index for 1950 as the starting year
+        int[] arr = new int[101];
+        for(int[] log : logs) {
+            int birth = log[0];
+            int death = log[1];
+            arr[birth-1950]++;
+            arr[death-1950]--;
+        }
+
+        int max = arr[0];
+        int year = 1950;
+        for(int i = 1 ; i < 101; i++) {
+            arr[i] += arr[i-1];
+            if(arr[i] > max) {
+                max = arr[i];
+                year = 1950 + i;
             }
         }
-        
-        // Find the year with maximum population
-        int maxPopulationYear = 0;
-        int maxPopulation = years[0];
-        for (int i = 1; i < years.length; i++) {
-            if (years[i] > maxPopulation) {
-                maxPopulation = years[i];
-                maxPopulationYear = i + 1950; // Adjusting year for 1950 as the starting year
-            }
-        }
-        
-        return maxPopulationYear;
+        return year;
     }
 }
