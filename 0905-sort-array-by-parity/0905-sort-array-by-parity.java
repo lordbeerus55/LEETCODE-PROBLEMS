@@ -3,6 +3,9 @@ class Solution {
         if(nums.length==1){
             return nums;
         }
+        if(nums.length==2&&nums[0]==0){
+            return nums;
+        }
          int start = 0 ;
          int end = nums.length-1;
          while(start<end){
@@ -11,9 +14,19 @@ class Solution {
                 nums[start]=nums[end];
                 nums[end]=temp;
               start++;    
-           
+            end--;
             }
-             end--;
+            else if(nums[start]%2==1&&nums[end]%2==1){
+               end--;
+            }
+            else if(nums[start]%2==0&&nums[end]%2==0)
+         {
+            start++;
+         }
+         else{
+            start++;
+            end--;
+         }
            
            
          }
