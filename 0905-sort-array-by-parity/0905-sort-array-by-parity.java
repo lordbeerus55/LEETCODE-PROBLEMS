@@ -3,6 +3,9 @@ class Solution {
         if(nums.length==1){
             return nums;
         }
+        if(nums.length==2&&nums[0]==0){
+            return nums;
+        }
          int start = 0 ;
          int end = nums.length-1;
          while(start<end){
