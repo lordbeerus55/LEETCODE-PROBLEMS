@@ -6,6 +6,10 @@ class Solution {
             if(s.charAt(i)>='a'&& s.charAt(i)<='z'){
                 straight+=s.charAt(i);
             }
+            else if(s.charAt(i)>='0' && s.charAt(i)<='9'){
+                straight+=s.charAt(i);
+    
+            }
         }
         int start = 0;
         int end = straight.length()-1;
