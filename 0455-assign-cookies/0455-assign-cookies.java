@@ -1,16 +1,20 @@
+import java.util.Arrays;
+
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
-        int greedsum=0;
-        for(int i = 0 ;i<s.length;i++){
-            greedsum+=s[i];
-        }
-        int counter=0;
-        for(int j = 0 ; j<g.length;j++){
-            if(greedsum>=g[j]){
-                counter++;
+        int count = 0;
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int i = 0, j = 0;
+
+        while (i < g.length && j < s.length) {
+            if (g[i] <= s[j]) {
+                count++;
+                i++;
             }
-            greedsum=greedsum-g[j];
+            j++;
         }
-        return counter;
+
+        return count;
     }
 }
