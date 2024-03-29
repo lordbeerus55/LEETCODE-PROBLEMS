@@ -7,9 +7,7 @@ class Solution {
             int min = Math.min(arr[start],arr[lastpoint]);
             int multiplier=lastpoint-start;
             int currentarea=min*multiplier;
-           if(maxwaterarea<currentarea){
-            maxwaterarea=currentarea;
-           }
+           maxwaterarea=Math.max(maxwaterarea,currentarea);
            if(arr[start]<arr[lastpoint]){
             start++;
            }
