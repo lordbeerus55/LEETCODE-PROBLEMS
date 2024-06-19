@@ -13,9 +13,9 @@ class Solution {
             else if(nums[mid]==nums[l] & nums [mid] == nums[h]){
                 l++;
                 h--;
-               
+                continue;
             }
-           else  if(nums[mid]>=nums[l]){  // left side sorted till mid
+            if(nums[mid]>=nums[l]){  // left side sorted till mid
                 if(nums[l]<=target && target <nums[mid]){
                     h = mid-1;
                 }else{
