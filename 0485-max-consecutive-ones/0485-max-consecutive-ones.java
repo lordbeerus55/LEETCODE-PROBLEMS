@@ -10,7 +10,7 @@ class Solution {
           
             else{
                 if(count>maxcount){
-                    
+
                     maxcount=count;
                 } 
 
@@ -20,7 +20,9 @@ class Solution {
          if(count > maxcount){
                 return count;
             }
-            else{return maxcount;}
-        
+
+         else{
+            return maxcount;
+            }
     }
 }
