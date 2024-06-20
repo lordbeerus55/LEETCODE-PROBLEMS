@@ -9,8 +9,9 @@ class Solution {
             }
           
             else{
-                if(count>maxcount)
-                {maxcount=count;
+                if(count>maxcount){
+                    
+                    maxcount=count;
                 } 
 
                 count = 0 ;
