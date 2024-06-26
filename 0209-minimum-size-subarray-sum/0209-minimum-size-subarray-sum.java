@@ -10,8 +10,8 @@ class Solution {
                 minlength=end-start+1;}
                 minlength=Math.min(minlength,end-start+1);
 
-                sum-=nums[start];
-                start++;
+                sum-=nums[start++];
+                
             }
         }
         return minlength;
