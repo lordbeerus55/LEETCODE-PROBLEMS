@@ -8,7 +8,7 @@ class Solution {
             maxwaterarea=Math.max(maxwaterarea,(lastpoint-start)*arr[start]);
             start++;
            }
-           else if(arr[lastpoint]<=arr[start]){
+           else {
             maxwaterarea=Math.max(maxwaterarea,(lastpoint-start)*arr[lastpoint]);
             lastpoint--;
            }
