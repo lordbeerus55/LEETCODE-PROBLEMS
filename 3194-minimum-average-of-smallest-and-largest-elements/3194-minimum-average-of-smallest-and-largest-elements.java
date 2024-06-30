@@ -8,9 +8,7 @@ class Solution {
         double minaverage = 300;
         while (l < n / 2) {
             double average = (nums[l] + nums[r]) / 2.0;
-            if (minaverage == 0) {
-                minaverage = average;
-            }
+           
             minaverage = Math.min(minaverage, average);
             l++;
             r--;
