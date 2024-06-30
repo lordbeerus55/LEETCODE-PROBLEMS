@@ -6,7 +6,7 @@ class Solution {
         int r = nums.length - 1;
         int n = nums.length;
         double minaverage = 300;
-        while (l <= n / 2) {
+        while (l < n / 2) {
             double average = (nums[l] + nums[r]) / 2.0;
             if (minaverage == 0) {
                 minaverage = average;
