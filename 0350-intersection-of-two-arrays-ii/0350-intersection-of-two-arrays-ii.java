@@ -12,10 +12,10 @@ class Solution {
             if(nums1[p1]<nums2[p2]){
                 p1++;
             }
-            if(nums2[p2]<nums1[p1]){
+            else if(nums2[p2]<nums1[p1]){
                 p2++;
             }
-            if(nums1[p1]==nums2[p2]){
+            else{
                 list.add(nums1[p1]);
                 p1++;
                 p2++;
