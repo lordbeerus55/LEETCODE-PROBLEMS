@@ -13,7 +13,7 @@ class Solution {
          for(Map.Entry<Character,Integer> entry: map.entrySet()){
             int frequency = entry.getValue();
             if(frequency>1){
-                count+=(frequency/2)*2;
+                count+=(frequency/2) *2;
             }
             if(frequency%2==1){
                 odd =1;
