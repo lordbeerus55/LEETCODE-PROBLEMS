@@ -3,7 +3,7 @@ class Solution {
          Map<Character,Integer> map = new HashMap<>();
 
          int count = 0; 
-         int odd = 0 ;
+         boolean odd = false;
          for(int i = 0 ; i <s.length();i++){
             char c = s.charAt(i);
 
@@ -12,14 +12,21 @@ class Solution {
 
          for(Map.Entry<Character,Integer> entry: map.entrySet()){
             int frequency = entry.getValue();
-            if(frequency>1){
-                count+=(frequency/2) *2;
+            if(frequency%2==0){
+                count+=frequency;
             }
-            if(frequency%2==1){
-                odd =1;
+            else{
+                count+=frequency-1;
+                odd=true;
             }
          }
-         return count+odd;
+         
+         if(odd==true){
+            return count+1;
+         }
+         else{
+            return count;
+         }
 
     }
         
