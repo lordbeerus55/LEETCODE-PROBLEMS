@@ -1,17 +1,22 @@
 class Solution {
-    public int maxArea(int[] arr) {
-        int maxwaterarea=0 ; 
-        int start = 0 ; 
-        int lastpoint = arr.length-1;
-        while(start<=lastpoint){
-           if(arr[start]<arr[lastpoint]){
-            maxwaterarea=Math.max(maxwaterarea,(lastpoint-start)*arr[start]);
-            start++;
-           }
-           else {
-            maxwaterarea=Math.max(maxwaterarea,(lastpoint-start)*arr[lastpoint]);
-            lastpoint--;
-           }
+    public int maxArea(int[] height) {
+        int start=0;
+        int end =height.length-1;
+        int maxwaterarea=0;
+
+        while(start<end){
+            if(height[start]<=height[end]){
+                int area=(end-start)*height[start];
+                maxwaterarea=Math.max(maxwaterarea,area);
+                start++;
+            }
+            else if(height[start]>height[end]){
+                int area=(end-start)*height[end];
+                maxwaterarea=Math.max(maxwaterarea,area);
+                end--;
+            }
+            
+
         }
         return maxwaterarea;
     }
