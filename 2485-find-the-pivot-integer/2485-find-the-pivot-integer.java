@@ -6,12 +6,11 @@ class Solution {
             right_sum += i;
 
             int left_sum = i * (i + 1) / 2;
-            if (left_sum < right_sum)
-                return -1;
-            else if (left_sum == right_sum)
+            if(left_sum==right_sum){
                 return i;
+            }
         }
 
-        return -5;
+        return -1;
     }
 }
