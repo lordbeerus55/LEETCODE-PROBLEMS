@@ -15,12 +15,13 @@ class Solution {
         
         StringBuilder answer = new StringBuilder();
        
-        while(countone-- > 1){
+        while(countone > 1){
             answer.append("1");
-           
-        }
-        while(countzero-- > 0){
+             countone--;
+        }  
+        while(countzero > 0){
             answer.append("0");
+            countzero--;
            
         }
         answer.append("1");
